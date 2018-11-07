@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style1.css">
+      <script>
+        function allowDrop(allowdropevent) {
+          //prevent default action
+          allowdropevent.preventDefault();
+        }
+
+        function drag(dragevent) {
+          //setting the data type for the drag event
+          dragevent.dataTransfer.setData("text", dragevent.target.id);
+        }
+
+        function drop(dropevent) {
+          //prevent default action
+          dropevent.preventDefault();
+          var data = dropevent.dataTransfer.getData("text");
+          //appending the element to be dropped to the target
+          dropevent.target.appendChild(document.getElementById(data));
+        }
+    </script>
+  </head>
+  <body>
+    <!-- first row wrapper -->
+    <div id="wrapper1" >
+      <!-- first box with big margin -->
+      <div class ="box text-aligned-center" id="margin-big">Text text text</div>
+      <!-- second box with medium margin -->
+      <div class ="box" id="margin-medium">
+        <div id="centered-text"><strong>Text text text</strong></div>
+      </div>
+      <!-- third box with text at bottom -->
+      <div class ="box" id="green">
+        <div class ="text-aligned-center" id="bottom-text">Text text text</div>
+      </div>
+      <!-- fourth box, which is animated -->
+      <div class ="box" id="animated">
+        <img src="https://2.bp.blogspot.com/-yGi-61kLMho/WUoSnTuoh5I/AAAAAAAABwg/0OZb67DwLLAlyw4vrrH7XHhn8dsfIY9FgCLcBGAs/s1600/004gw.png" alt="">
+      </div>
+    </div>
+
+    <!-- second row wrapper -->
+    <div id="wrapper2" >
+      <!-- draggable image -->
+      <div class="box" id="draggable">
+        <img id="dragme" src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_%28large%29.gif" draggable="true" ondragstart="drag(event)">
+      </div>
+      <!-- wide box -->
+      <div class ="box" id="wide">Text text text</div>
+    </div>
+
+    <!-- third row wrapper -->
+    <div id="wrapper3">
+      <!-- area to drop image -->
+      <div class= "box" id="dropbox1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <!-- area to drop image -->
+      <div class = "box" id="dropbox2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+
+  </body>
+</html>

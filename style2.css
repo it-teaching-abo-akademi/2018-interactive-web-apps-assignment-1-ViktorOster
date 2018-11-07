@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+/* Style the centered image */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+/* Style the sidebar */
+.sidebar {
+  border: 1px solid black;
+  margin-left: 25px;
+  width: 200px;
+  position: fixed;
+  height: auto;
+  overflow: auto;
+}
+/* Style the links inside the sidebar */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+/* Change background color and text color of sidebar links on hover */
+.sidebar a:hover {
+  background-color: #555;
+  color: white;
+}
+/* Style the navigation bar */
+.topnav {
+  margin-right: 100px;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: right;
+    display: block;
+    color: #111111;
+    text-align: center;
+    padding: 22px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add an active class to highlight the current page */
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+div.content {
+  margin-left: 260px;
+  padding: 1px 16px;
+  height: 1000px;
+  margin-right: 10%;
+}
+
+/* adjust to medium/small screen size */
+@media screen and (max-width: 700px) {
+  .topnav {
+    margin: 0;
+  }
+  /* float top navigation bar to left*/
+  .topnav a {
+    float: left;
+  }
+  /* position sidebar at top */
+  .sidebar {
+    margin: 0;
+    /* stretch to fit the screen */
+    width: 100%;
+    position: relative;
+
+  }
+  /* stack the content in the sidebar to the left */
+  .sidebar a {float: left;}
+  /* remove the margin of the div containing the text and image */
+  div.content {margin-left: 0;}
+}
+
+/* adjust to small screen size */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
