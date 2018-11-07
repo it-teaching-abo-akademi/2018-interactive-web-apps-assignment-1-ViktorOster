@@ -1,0 +1,90 @@
+/*the animation blends between background colors according to time*/
+@keyframes blendcolor {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+}
+
+body{
+  margin: 50px;
+}
+
+/* setting bottom margins individually for the wrappers */
+#wrapper1 {
+  margin-bottom: 150px;
+  height: 160px;
+}
+#wrapper2 {
+  margin-bottom: 50px;
+  height: 160px;
+}
+#wrapper3 {
+  height: 160px;
+}
+
+.box {
+  /* setting width and height of boxes, also a default right margin */
+  width:160px;
+  height:160px;
+  border: 1px solid black;
+  margin-right: 200px;
+  /* makes the boxes stack next to each other inside the div */
+  float: left;
+
+}
+.text-aligned-center {
+  text-align: center;
+}
+img {
+  width:160px;
+  height:160px;
+}
+#margin-big{
+  margin-right: 250px;
+  background: blue;
+}
+#margin-medium{
+  margin-right: 150px;
+  background: yellow;
+}
+#green{
+  background: green;
+}
+#animated{
+  background: red;
+  float: right;
+  margin-right: 0px;
+  /* setting an animation for the image */
+  animation-name: blendcolor;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+#wide{
+  width: 550px;
+  background: gray;
+  border:2px solid red;
+}
+
+#dropbox1 {
+  border:1px solid green;
+  margin-left: 100px;
+  margin-right: 650px;
+}
+#dropbox2 {
+  border:1px solid black;
+}
+/* positions text in middle while retaining height */
+#centered-text {
+  top: 50%;
+  position:relative;
+  height:40px;
+}
+/* positions text at bottom while retaining height */
+#bottom-text {
+  top:90%;
+  position:relative;
+  text-align: center;
+  height:20px;
+}
